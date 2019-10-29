@@ -27,7 +27,7 @@ router.post('/register',function (req,res) {
 
 })
 
-router.get("/name", function(req,res){
+router.get("/validate", function(req,res){
     var token = req.headers["x-access-token"]
     if(!token) return res.status(401).send({auth:false,message:"Unathorized"})
 
@@ -38,7 +38,7 @@ router.get("/name", function(req,res){
             console.log(user)
         })
 
-        res.status(200).send(decoded)
+        res.status(200).send({auth:true})
     })
 
 })

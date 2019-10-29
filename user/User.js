@@ -5,5 +5,5 @@ var UserSchema = new mongoose.Schema({
   password: String
 });
 mongoose.model('User', UserSchema);
-
+console.log("Terbuat User")
 module.exports = mongoose.model('User');

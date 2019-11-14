@@ -8,6 +8,11 @@ var bcrypt = require('bcryptjs');
 var config = require('./config');
 var jwt = require('jsonwebtoken')
 
+
+router.get("/hey",function (req,res) { 
+    res.status(200).send("Hello")
+ })
+
 router.post('/register',function (req,res) {
     var hashedPassword = bcrypt.hashSync(req.body.password,8)
     User.create({
